@@ -1,0 +1,91 @@
+:root {
+	--bg: #111111;
+	--text: #eeeeee;
+
+	--main-width: 38rem;
+	--main-padding-x: 1.5rem;
+
+	--p-margin-y: 1rem;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html {
+	width: 100%;
+	background-color: var(--bg);
+	color: var(--text);
+}
+
+body {
+	width: 100%;
+	margin: 0;
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	font-family: "STIX Two Text", Georgia, "Times New Roman", serif;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 1.5;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+main {
+	width: 100%;
+	max-width: var(--main-width);
+	margin-top: 4rem;
+	margin-right: 0;
+	margin-bottom: 0;
+	margin-left: 0;
+	padding-right: var(--main-padding-x);
+	padding-left: var(--main-padding-x);
+}
+
+h1 {
+	font-size: 22px;
+	font-weight: 500;
+}
+
+p {
+	margin-top: var(--p-margin-y);
+	margin-right: 0;
+	margin-bottom: var(--p-margin-y);
+	margin-left: 0;
+}
+
+a {
+	color: inherit;
+	text-decoration: underline;
+	text-underline-offset: 0.15em;
+}
+
+a:hover {
+	opacity: 0.85;
+}
+
+ul {
+	display: flex;
+	flex-direction: column;
+	gap: 0.25rem;
+	margin-top: var(--p-margin-y);
+	margin-right: 0;
+	margin-bottom: var(--p-margin-y);
+	margin-left: 0;
+	padding: 0;
+	list-style: none;
+}
+
+li {
+	position: relative;
+	padding-left: 1.25rem;
+}
+
+li::before {
+	content: "▪";
+	position: absolute;
+	left: 0;
+}
