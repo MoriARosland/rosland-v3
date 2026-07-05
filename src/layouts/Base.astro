@@ -1,12 +1,13 @@
 ---
+import type { MarkdownLayoutProps } from 'astro';
 import '../styles/global.css';
 
-interface Props {
+type Props = MarkdownLayoutProps<{
 	title: string;
 	description?: string;
-}
+}>;
 
-const { title, description } = Astro.props;
+const { frontmatter } = Astro.props;
 ---
 
 <!doctype html>
@@ -14,8 +15,10 @@ const { title, description } = Astro.props;
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width" />
-		<title>{title}</title>
-		{description && <meta name="description" content={description} />}
+		<title>{frontmatter.title}</title>
+		{frontmatter.description && (
+			<meta name="description" content={frontmatter.description} />
+		)}
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -26,6 +29,7 @@ const { title, description } = Astro.props;
 	</head>
 	<body>
 		<main>
+			<h1>{frontmatter.title}</h1>
 			<slot />
 		</main>
 	</body>

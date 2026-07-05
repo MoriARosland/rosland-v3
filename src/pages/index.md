@@ -1,9 +1,8 @@
 ---
-title: Rosland
+layout: ../layouts/Base.astro
+title: Mori Adrian Rosland
 description: Placeholder bio for portfolio site.
 ---
-
-# Mori Adrian Rosland
 
 I'm an electronics engineer and graduated from NTNU june this year specializing in digital and mixed-signal systems. I work at ProxFlyer building the electronics for the foiling vessel Sea Shadow.
 
