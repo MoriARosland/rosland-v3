@@ -5,6 +5,7 @@ import '../styles/global.css';
 type Props = MarkdownLayoutProps<{
 	title: string;
 	description?: string;
+	showWorkButton?: boolean;
 }>;
 
 const { frontmatter } = Astro.props;
@@ -29,7 +30,12 @@ const { frontmatter } = Astro.props;
 	</head>
 	<body>
 		<main>
-			<h1>{frontmatter.title}</h1>
+			<header class="page-header">
+				<h1>{frontmatter.title}</h1>
+				{frontmatter.showWorkButton && (
+					<a class="btn" href="/my-work">My work</a>
+				)}
+			</header>
 			<slot />
 		</main>
 	</body>
