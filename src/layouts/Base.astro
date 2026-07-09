@@ -1,12 +1,12 @@
 ---
-import type { MarkdownLayoutProps } from 'astro';
 import '../styles/global.css';
 
-type Props = MarkdownLayoutProps<{
-	title: string;
-	description?: string;
-	showWorkButton?: boolean;
-}>;
+type Props = {
+	frontmatter: {
+		title: string;
+		description?: string;
+	};
+};
 
 const { frontmatter } = Astro.props;
 ---
@@ -32,9 +32,7 @@ const { frontmatter } = Astro.props;
 		<main>
 			<h1>{frontmatter.title}</h1>
 			<slot />
-			{frontmatter.showWorkButton && (
-				<a class="btn" href="/my-work">My work</a>
-			)}
+			<slot name="nav" />
 		</main>
 	</body>
 </html>

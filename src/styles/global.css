@@ -6,6 +6,7 @@
 	--main-padding-x: 1.5rem;
 
 	--p-margin-y: 1rem;
+	--cta-margin-top: 1.5rem;
 }
 
 *,
@@ -48,28 +49,6 @@ main {
 h1 {
 	font-size: 22px;
 	font-weight: 500;
-}
-
-.btn {
-	display: inline-block;
-	margin-top: 1.5rem;
-	padding: 0.35rem 0.75rem;
-	border: 1px solid var(--text);
-	border-radius: 0.375rem;
-	font-family: inherit;
-	font-size: 14px;
-	line-height: 1;
-	text-decoration: none;
-	white-space: nowrap;
-}
-
-.btn:hover {
-	opacity: 0.85;
-}
-
-.btn:focus-visible {
-	outline: 1px solid var(--text);
-	outline-offset: 2px;
 }
 
 p {

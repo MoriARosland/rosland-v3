@@ -1,5 +1,5 @@
 ---
-layout: ../layouts/Base.astro
+layout: ../layouts/Work.astro
 title: My work
 description: Selected projects and work.
 ---
