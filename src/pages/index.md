@@ -8,4 +8,4 @@ I'm an electronics engineer and graduated from NTNU june this year specializing 
 
 Full stack PCB design is my main area of expertise: system design, schematic capture, layout, assembly, and bringup. I design both high-speed digital circuits and mixed-signal PCBs.
 
-In addition, I have gained extensive firmware development experience through university projects, personal work, and internships at Airthings and Microchip. My primary languages are C and C++.
+In addition, I have gained extensive firmware development experience (C/C++) through university projects, personal work, and internships at Airthings and Microchip.
