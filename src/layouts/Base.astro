@@ -1,0 +1,38 @@
+---
+import '../styles/global.css';
+
+type Props = {
+	frontmatter: {
+		title: string;
+		description?: string;
+	};
+};
+
+const { frontmatter } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<title>{frontmatter.title}</title>
+		{frontmatter.description && (
+			<meta name="description" content={frontmatter.description} />
+		)}
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,500;1,400&display=swap"
+			rel="stylesheet"
+		/>
+	</head>
+	<body>
+		<main>
+			<h1>{frontmatter.title}</h1>
+			<slot />
+			<slot name="nav" />
+		</main>
+	</body>
+</html>
