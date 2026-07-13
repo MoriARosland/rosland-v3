@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import SocialLinks from '../components/SocialLinks.astro';
 
 type Props = {
 	frontmatter: {
@@ -33,6 +34,7 @@ const { frontmatter } = Astro.props;
 			<h1>{frontmatter.title}</h1>
 			<slot />
 			<slot name="nav" />
+			<SocialLinks />
 		</main>
 	</body>
 </html>
