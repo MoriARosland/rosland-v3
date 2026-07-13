@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import SocialLinks from '../components/SocialLinks.astro';
 
 type Props = {
 	frontmatter: {
@@ -9,6 +10,8 @@ type Props = {
 };
 
 const { frontmatter } = Astro.props;
+const isHome = Astro.url.pathname === '/';
+const pageTitle = isHome ? 'Rosland' : `Rosland - ${frontmatter.title}`;
 ---
 
 <!doctype html>
@@ -16,11 +19,11 @@ const { frontmatter } = Astro.props;
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width" />
-		<title>{frontmatter.title}</title>
+		<title>{pageTitle}</title>
 		{frontmatter.description && (
 			<meta name="description" content={frontmatter.description} />
 		)}
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
@@ -33,6 +36,7 @@ const { frontmatter } = Astro.props;
 			<h1>{frontmatter.title}</h1>
 			<slot />
 			<slot name="nav" />
+			<SocialLinks />
 		</main>
 	</body>
 </html>
