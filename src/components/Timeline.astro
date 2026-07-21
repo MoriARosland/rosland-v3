@@ -18,10 +18,10 @@ const { items } = Astro.props;
 	{items.map((item) => (
 		<li class="timeline__item">
 			<p class="timeline__period">{item.period}</p>
-			<h2 class="timeline__title">
+			<h3 class="timeline__title">
 				{item.title}
 				{item.company && <span class="timeline__company"> · {item.company}</span>}
-			</h2>
+			</h3>
 			<p class="timeline__description">{item.description}</p>
 			{item.tags && item.tags.length > 0 && (
 				<ul class="timeline__tags">
@@ -43,7 +43,7 @@ const { items } = Astro.props;
 		display: flex;
 		flex-direction: column;
 		gap: var(--timeline-gap);
-		margin: 2rem 0;
+		margin: 1.5rem 0 0;
 		padding: 0;
 		list-style: none;
 	}
