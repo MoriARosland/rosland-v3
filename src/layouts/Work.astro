@@ -2,10 +2,12 @@
 import type { MarkdownLayoutProps } from 'astro';
 import Base from './Base.astro';
 import HomeNav from '../components/HomeNav.astro';
+import Timeline, { type TimelineItem } from '../components/Timeline.astro';
 
 type Props = MarkdownLayoutProps<{
 	title: string;
 	description?: string;
+	experience?: TimelineItem[];
 }>;
 
 const { frontmatter } = Astro.props;
@@ -13,5 +15,8 @@ const { frontmatter } = Astro.props;
 
 <Base frontmatter={frontmatter}>
 	<slot />
+	{frontmatter.experience && frontmatter.experience.length > 0 && (
+		<Timeline items={frontmatter.experience} />
+	)}
 	<HomeNav slot="nav" />
 </Base>
