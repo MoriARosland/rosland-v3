@@ -18,6 +18,7 @@ const hasProjects = frontmatter.projects && frontmatter.projects.length > 0;
 ---
 
 <Base frontmatter={frontmatter}>
+	<HomeNav slot="nav-top" placement="top" />
 	<slot />
 	{hasExperience && (
 		<section class="work-section">
@@ -31,7 +32,6 @@ const hasProjects = frontmatter.projects && frontmatter.projects.length > 0;
 			<Projects items={frontmatter.projects!} />
 		</section>
 	)}
-	<HomeNav slot="nav" />
 </Base>
 
 <style>
