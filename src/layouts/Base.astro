@@ -33,6 +33,7 @@ const pageTitle = isHome ? 'Rosland' : `Rosland - ${frontmatter.title}`;
 	</head>
 	<body>
 		<main>
+			<slot name="nav-top" />
 			<h1>{frontmatter.title}</h1>
 			<slot />
 			<slot name="nav" />

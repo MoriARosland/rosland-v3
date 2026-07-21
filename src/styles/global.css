@@ -124,6 +124,11 @@ a:not(.btn):hover {
 	margin-top: var(--cta-margin-top);
 }
 
+.page-nav--top {
+	margin-top: 0;
+	margin-bottom: 1.25rem;
+}
+
 .social-links {
 	display: flex;
 	gap: 1rem;

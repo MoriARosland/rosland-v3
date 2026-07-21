@@ -3,20 +3,50 @@ import type { MarkdownLayoutProps } from 'astro';
 import Base from './Base.astro';
 import HomeNav from '../components/HomeNav.astro';
 import Timeline, { type TimelineItem } from '../components/Timeline.astro';
+import Projects, { type Project } from '../components/Projects.astro';
 
 type Props = MarkdownLayoutProps<{
 	title: string;
 	description?: string;
 	experience?: TimelineItem[];
+	projects?: Project[];
 }>;
 
 const { frontmatter } = Astro.props;
+const hasExperience = frontmatter.experience && frontmatter.experience.length > 0;
+const hasProjects = frontmatter.projects && frontmatter.projects.length > 0;
 ---
 
 <Base frontmatter={frontmatter}>
+	<HomeNav slot="nav-top" placement="top" />
 	<slot />
-	{frontmatter.experience && frontmatter.experience.length > 0 && (
-		<Timeline items={frontmatter.experience} />
+	{hasExperience && (
+		<section class="work-section">
+			<h2 class="work-section__heading">Experience</h2>
+			<Timeline items={frontmatter.experience!} />
+		</section>
 	)}
-	<HomeNav slot="nav" />
+	{hasProjects && (
+		<section class="work-section">
+			<h2 class="work-section__heading">Projects</h2>
+			<Projects items={frontmatter.projects!} />
+		</section>
+	)}
 </Base>
+
+<style>
+	.work-section {
+		margin-top: 2.5rem;
+	}
+
+	.work-section__heading {
+		margin: 0;
+		padding-bottom: 0.5rem;
+		border-bottom: 1px solid #3a3a3a;
+		font-size: 13px;
+		font-weight: 500;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+		color: #888888;
+	}
+</style>
