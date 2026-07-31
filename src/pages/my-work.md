@@ -31,4 +31,4 @@ projects:
     tags: [Astro, TypeScript]
 ---
 
-A timeline of my professional experience and a selection of things I have built.
+Page under construction
