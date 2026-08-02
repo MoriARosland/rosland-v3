@@ -42,7 +42,7 @@ main {
 	max-width: var(--main-width);
 	margin-top: 4rem;
 	margin-right: 0;
-	margin-bottom: 0;
+	margin-bottom: 2rem;
 	margin-left: 0;
 	padding-right: var(--main-padding-x);
 	padding-left: var(--main-padding-x);
