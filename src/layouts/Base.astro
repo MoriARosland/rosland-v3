@@ -1,4 +1,5 @@
 ---
+import { Font } from 'astro:assets';
 import '../styles/global.css';
 import SocialLinks from '../components/SocialLinks.astro';
 
@@ -12,6 +13,7 @@ type Props = {
 const { frontmatter } = Astro.props;
 const isHome = Astro.url.pathname === '/';
 const pageTitle = isHome ? 'Rosland' : `Rosland - ${frontmatter.title}`;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 
 <!doctype html>
@@ -24,12 +26,9 @@ const pageTitle = isHome ? 'Rosland' : `Rosland - ${frontmatter.title}`;
 			<meta name="description" content={frontmatter.description} />
 		)}
 		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,500;1,400&display=swap"
-			rel="stylesheet"
-		/>
+		<link rel="canonical" href={canonicalURL} />
+		<link rel="sitemap" href="/sitemap-index.xml" />
+		<Font cssVariable="--font-stix-two-text" preload />
 	</head>
 	<body>
 		<main>
