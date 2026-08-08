@@ -9,11 +9,13 @@ type Props = MarkdownLayoutProps<{
 	title: string;
 	description?: string;
 	experience?: TimelineItem[];
+	education?: TimelineItem[];
 	projects?: Project[];
 }>;
 
 const { frontmatter } = Astro.props;
 const hasExperience = frontmatter.experience && frontmatter.experience.length > 0;
+const hasEducation = frontmatter.education && frontmatter.education.length > 0;
 const hasProjects = frontmatter.projects && frontmatter.projects.length > 0;
 ---
 
@@ -23,7 +25,13 @@ const hasProjects = frontmatter.projects && frontmatter.projects.length > 0;
 	{hasExperience && (
 		<section class="work-section">
 			<h2 class="work-section__heading">Experience</h2>
-			<Timeline items={frontmatter.experience!} />
+			<Timeline items={frontmatter.experience!} highlightLatest />
+		</section>
+	)}
+	{hasEducation && (
+		<section class="work-section">
+			<h2 class="work-section__heading">Education</h2>
+			<Timeline items={frontmatter.education!} />
 		</section>
 	)}
 	{hasProjects && (

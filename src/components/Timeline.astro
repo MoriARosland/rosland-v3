@@ -9,14 +9,15 @@ export type TimelineItem = {
 
 type Props = {
 	items: TimelineItem[];
+	highlightLatest?: boolean;
 };
 
-const { items } = Astro.props;
+const { items, highlightLatest = false } = Astro.props;
 ---
 
 <ol class="timeline">
-	{items.map((item) => (
-		<li class="timeline__item">
+	{items.map((item, index) => (
+		<li class:list={["timeline__item", { "timeline__item--latest": highlightLatest && index === 0 }]}>
 			<p class="timeline__period">{item.period}</p>
 			<h3 class="timeline__title">
 				{item.title}
@@ -78,6 +79,27 @@ const { items } = Astro.props;
 		height: 0.75rem;
 		border-radius: 50%;
 		background-color: var(--text);
+	}
+
+	.timeline__item--latest::after {
+		--timeline-beacon: #b8d9c0;
+		background-color: var(--timeline-beacon);
+	}
+
+	@keyframes timeline-beacon {
+		0% {
+			box-shadow: 0 0 0 0 color-mix(in srgb, var(--timeline-beacon) 45%, transparent);
+		}
+		70%,
+		100% {
+			box-shadow: 0 0 0 8px transparent;
+		}
+	}
+
+	@media (prefers-reduced-motion: no-preference) {
+		.timeline__item--latest::after {
+			animation: timeline-beacon 2.5s ease-out infinite;
+		}
 	}
 
 	.timeline__period {
