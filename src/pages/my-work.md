@@ -47,6 +47,6 @@ projects:
     description: Multiply-accumulate hardware accelerator for fast arithmetic in digital signal processing workloads.
     tags: [Digital Design, HW Acceleration]
   - name: Pulse-Induction Metal Detector Array
-    description: Pulse-induction metal detector with a custom analog front end and signal-processing pipeline.
+    description: Pulse-induction metal detector with a custom analog front-end and signal-processing pipeline.
     tags: [Analog Design, Electronics, Induction Physics]
 ---
