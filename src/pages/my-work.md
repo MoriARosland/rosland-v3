@@ -6,8 +6,8 @@ experience:
   - period: "2026 — Present"
     title: Electronics Engineer
     company: Proxflyer
-    description: Designing and assembling electronics for unmanned maritime vessels and related systems.
-    tags: [Electronics, PCB Design, Control Systems]
+    description: Hardware design and electronics bring-up for unmanned maritime vessels and related systems, including firmware (C/C++) for the onboard electronics.
+    tags: [Hardware Design, Bring-up, Firmware]
   - period: "2025"
     title: Hardware Engineer (Intern)
     company: Airthings
